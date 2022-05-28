@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12effc7b43fb74845aefd8ac17f5d107, type: 3}
   m_Name: Wilting vine
   m_EditorClassIdentifier: 
-  ingredientName: 
-  sprite: {fileID: 0}
-  movementQueue: []
+  ingredientName: Wilting vine
+  sprite: {fileID: 21300000, guid: 78cd992e303b2a0439debde4395b1f19, type: 3}
+  movementQueue:
+  - direction: 1
+    moves: 2

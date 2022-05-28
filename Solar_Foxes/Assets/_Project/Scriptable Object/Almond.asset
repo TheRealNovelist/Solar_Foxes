@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Almond
   m_EditorClassIdentifier: 
   ingredientName: Almond
-  sprite: {fileID: 21300000, guid: 5541455bff4fc7140bf56e9cdb83ab8d, type: 3}
+  sprite: {fileID: 0}
   movementQueue:
-  - direction: 0
-    moves: 0
+  - direction: 1
+    moves: 5
+  - direction: 2
+    moves: 6
+  - direction: 1
+    moves: 1
+  - direction: 2
+    moves: 2
