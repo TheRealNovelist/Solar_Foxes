@@ -7,19 +7,33 @@ using UnityEngine.EventSystems;
 public class IngredientHolder : MonoBehaviour, IDropHandler, IPointerDownHandler
 {
     private IngredientCard cardHolding;
-    
+
+    [SerializeField] private int index = 0;
+
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("Dropped");
+        RemoveIngredientFromHolder();
+        
         cardHolding = eventData.pointerDrag.GetComponent<IngredientCard>();
-        cardHolding.Init(this);
+        cardHolding.AssignHolder(this);
         cardHolding.draggingTransform.position = GetComponent<RectTransform>().position;
+        IngredientManager.AddIngredient(index, cardHolding.ingredient);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (!cardHolding) return;
-        
-        cardHolding.FreeIngredient();
+        RemoveIngredientFromHolder();
     }
+
+    public void RemoveIngredientFromHolder()
+    {
+        if (!cardHolding) return;
+
+        cardHolding.ReturnIngredient();
+        cardHolding = null;
+        IngredientManager.RemoveIngredient(index);
+    }
+    
+
 }

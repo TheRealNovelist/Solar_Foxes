@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
+
 
 [RequireComponent(typeof(CanvasGroup))]
-public class IngredientCard : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
+    public IngredientManager manager;
     public Ingredient ingredient;
 
     public TextMeshProUGUI text;
@@ -19,23 +19,29 @@ public class IngredientCard : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
     [HideInInspector] public RectTransform displayTransform;
     [HideInInspector] public RectTransform draggingTransform;
+
+    private Vector2 originalPosition;
+    private Vector2 pulledPosition;
     
     public IngredientHolder currentHolder;
+
+    public void Init(IngredientManager newManager)
+    {
+        manager = newManager;
+    }
     
-    
-    public void Init(IngredientHolder holder)
+    public void AssignHolder(IngredientHolder holder)
     {
         currentHolder = holder;
     }
-    
-    private void Awake()
+
+    public void AssignIngredient(Ingredient newIngredient)
     {
-        displayTransform = displayImage.GetComponent<RectTransform>();
-        draggingTransform = draggingImage.GetComponent<RectTransform>();
-        draggingImage.enabled = false;
+        ingredient = newIngredient;
+        UpdateCard();
     }
 
-    private void OnValidate()
+    private void UpdateCard()
     {
         if (ingredient != null)
         {
@@ -45,19 +51,31 @@ public class IngredientCard : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         }
     }
     
-    public void OnPointerDown(PointerEventData eventData)
+    private void Awake()
     {
-        if (currentHolder) return;
+        displayTransform = displayImage.GetComponent<RectTransform>();
+        draggingTransform = draggingImage.GetComponent<RectTransform>();
+        draggingImage.enabled = false;
+
+        var position = transform.position;
+        originalPosition = position;
+        pulledPosition = position + Vector3.down * 100;
         
-        draggingImage.enabled = true;
-        draggingTransform.position = eventData.position;
+        UpdateCard();
     }
-    
+
+    private void OnValidate()
+    {
+        UpdateCard();
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (currentHolder) return;
-        
-        GetComponent<CanvasGroup>().alpha = 0.6f;
+
+        transform.position = pulledPosition;
+        draggingImage.enabled = true;
+        draggingTransform.position = eventData.position;
     }
     
     public void OnDrag(PointerEventData eventData)
@@ -70,21 +88,25 @@ public class IngredientCard : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     public void OnEndDrag(PointerEventData eventData)
     {
         if (currentHolder) return;
-
-        EnableImage();
+        
+        ReturnDraggingImage();
     }
-
-    private void EnableImage()
+    
+    private void ReturnDraggingImage()
     {
-        GetComponent<CanvasGroup>().alpha = 1f;
+        transform.position = originalPosition;
         draggingTransform.anchoredPosition = displayTransform.anchoredPosition;
         draggingImage.enabled = false;
     }
     
-    public void FreeIngredient()
+    public void ReturnIngredient()
     {
         currentHolder = null;
-        
-        EnableImage();
+        ReturnDraggingImage();
+    }
+
+    public void ChangeIngredient()
+    {
+        AssignIngredient(manager.RequestIngredient());
     }
 }
