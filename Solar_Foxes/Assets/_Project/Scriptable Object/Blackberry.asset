@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12effc7b43fb74845aefd8ac17f5d107, type: 3}
-  m_Name: Aloes
+  m_Name: Blackberry
   m_EditorClassIdentifier: 
-  ingredientName: 
-  sprite: {fileID: 0}
-  movementQueue: []
+  ingredientName: Blackberry
+  sprite: {fileID: 21300000, guid: 7b385d67ba8196846b9f0b3f4a324a3c, type: 3}
+  movementQueue:
+  - direction: 1
+    moves: 1
+  - direction: 3
+    moves: 2

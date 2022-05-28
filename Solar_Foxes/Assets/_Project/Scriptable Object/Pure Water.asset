@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12effc7b43fb74845aefd8ac17f5d107, type: 3}
-  m_Name: Aloes
+  m_Name: Pure Water
   m_EditorClassIdentifier: 
-  ingredientName: 
-  sprite: {fileID: 0}
-  movementQueue: []
+  ingredientName: Pure Water
+  sprite: {fileID: 21300000, guid: 899d70a13c7f66744acc5b615e6aa0a6, type: 3}
+  movementQueue:
+  - direction: 0
+    moves: 2

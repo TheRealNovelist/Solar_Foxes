@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12effc7b43fb74845aefd8ac17f5d107, type: 3}
-  m_Name: Aloes
+  m_Name: Sage
   m_EditorClassIdentifier: 
-  ingredientName: 
-  sprite: {fileID: 0}
-  movementQueue: []
+  ingredientName: Sage
+  sprite: {fileID: 21300000, guid: f068885f1e5afd84c80c567a87a1cba7, type: 3}
+  movementQueue:
+  - direction: 1
+    moves: 1
+  - direction: 3
+    moves: 3

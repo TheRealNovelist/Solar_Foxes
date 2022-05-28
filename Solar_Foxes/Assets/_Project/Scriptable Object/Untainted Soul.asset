@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12effc7b43fb74845aefd8ac17f5d107, type: 3}
-  m_Name: Aloes
+  m_Name: Untainted Soul
   m_EditorClassIdentifier: 
-  ingredientName: 
-  sprite: {fileID: 0}
-  movementQueue: []
+  ingredientName: Untainted Soul
+  sprite: {fileID: 21300000, guid: 93e7f6f508d2bd847912c116e2facb31, type: 3}
+  movementQueue:
+  - direction: 1
+    moves: 1

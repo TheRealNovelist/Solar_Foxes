@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12effc7b43fb74845aefd8ac17f5d107, type: 3}
-  m_Name: Aloes
+  m_Name: Anemone
   m_EditorClassIdentifier: 
-  ingredientName: 
-  sprite: {fileID: 0}
-  movementQueue: []
+  ingredientName: Anemone
+  sprite: {fileID: 21300000, guid: ea666a0bcff9fee478652b75bf00c6bc, type: 3}
+  movementQueue:
+  - direction: 1
+    moves: 2
+  - direction: 2
+    moves: 3
