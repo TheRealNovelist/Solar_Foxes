@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: Acacia
   m_EditorClassIdentifier: 
   ingredientName: Acacia
-  sprite: {fileID: 21300000, guid: 5e3c4e07b09288d4d97dc2b975c4f663, type: 3}
+  sprite: {fileID: 21300000, guid: b0cca2a4f13498949a9ab30f33ee615d, type: 3}
   movementQueue:
   - direction: 0
-    moves: 5
-  - direction: 2
-    moves: 3
-  - direction: 1
-    moves: 4
-  - direction: 2
     moves: 5

@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public LineRenderer line;
     public Vector2 originPoint;
     
-    public List<Ingredient> chosenIngredients;
-    public List<Movement> allMovements;
-    public List<Vector2> movementNodes;
+    private List<Ingredient> chosenIngredients;
+    private List<Movement> allMovements;
+    private List<Vector2> movementNodes;
     
     // Start is called before the first frame update
     private void Start()
@@ -24,6 +24,16 @@ public class PlayerMovement : MonoBehaviour
     {
         DrawLine();
         ConvertMovementsToNode();
+    }
+
+    public void AddIngredient(int index, Ingredient ingredient)
+    {
+        chosenIngredients.Insert(index, ingredient);
+    }
+
+    public void RemoveIngredient(int index)
+    {
+        chosenIngredients.RemoveAt(index);
     }
     
     void RefreshTotalMovement()
@@ -81,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
             line.SetPosition(i, movementNodes[i]);
         }
     }
-    
     
     // private void OnDrawGizmos()
     // {
