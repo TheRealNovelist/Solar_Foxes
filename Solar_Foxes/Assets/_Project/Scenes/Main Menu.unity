@@ -2095,8 +2095,11 @@ MonoBehaviour:
   m_Text: 'Drag item into the pentagram to move around the map
 
 
-    Collect all
-    the requirement to achieve the philosopher stone.'
+    Burn to refresh
+    card deck.
+
+
+    Collect all the requirement to achieve the philosopher stone.'
 --- !u!222 &1320861933
 CanvasRenderer:
   m_ObjectHideFlags: 0
