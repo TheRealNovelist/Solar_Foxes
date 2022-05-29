@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12effc7b43fb74845aefd8ac17f5d107, type: 3}
+  m_Name: Aloes
+  m_EditorClassIdentifier: 
+  ingredientName: Aloes
+  sprite: {fileID: 21300000, guid: 0ca58ed559b9b584e9e5795b9be8be1e, type: 3}
+  movementQueue:
+  - direction: 0
+    moves: 1
+  - direction: 2
+    moves: 2

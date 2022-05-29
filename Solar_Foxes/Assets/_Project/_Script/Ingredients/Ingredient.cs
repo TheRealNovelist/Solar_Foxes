@@ -17,10 +17,10 @@ public enum Direction
 public class Movement
 {
     public Direction direction = Direction.North;
-    public int moves = 1;
+    public int moves = 0;
 }
 
-[CreateAssetMenu(menuName = "Scriptable Object/Ingredient", fileName = "New Ingredient")]
+[CreateAssetMenu(menuName = "Scriptable Object/Ingredient/Ingredient Asset", fileName = "New Ingredient")]
 public class Ingredient : ScriptableObject
 {
     public string ingredientName;

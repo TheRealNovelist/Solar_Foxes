@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fdfa8d20015fcf40b3629ef7edb979e, type: 3}
+  m_Name: Scorpio
+  m_EditorClassIdentifier: 
+  allIngredients:
+  - {fileID: 11400000, guid: 30493a432be20d7429227db9dcbde6c7, type: 2}
+  - {fileID: 11400000, guid: 9b54911c5ad8ceb47bef911789ce027f, type: 2}
+  - {fileID: 11400000, guid: 1736e8e61f709c54b8c3d0707a6980e0, type: 2}
+  - {fileID: 11400000, guid: 7c0296304b8cf2c41b469fe60364713b, type: 2}
+  - {fileID: 11400000, guid: ee06cc57d51eb3944ab6d88208601805, type: 2}
+  - {fileID: 11400000, guid: 6dd7d015f872ace4e8e817c6ddfd5d52, type: 2}
+  - {fileID: 11400000, guid: 3c12f39ca7fe9a946b05208d308cb9fd, type: 2}
+  - {fileID: 11400000, guid: 6862d8eb15b7421478d5d68b313e1093, type: 2}
+  - {fileID: 11400000, guid: bf7f42e548c2ee24ea90f1078587cca9, type: 2}
+  - {fileID: 11400000, guid: d5344ef9fdaa25344848df979a2881e5, type: 2}
+  - {fileID: 11400000, guid: 67ce056eae6ac6948894fd77b660b8bc, type: 2}
+  - {fileID: 11400000, guid: de8d6859c90488c47977738a748b1553, type: 2}
+  - {fileID: 11400000, guid: 7a04f6a29136af042a0788a1973bc1a2, type: 2}
+  - {fileID: 11400000, guid: f564191f79e3d3648a97d8bbcea3607e, type: 2}
+  - {fileID: 11400000, guid: dec1c62608035e94eb006e034da5d16e, type: 2}
+  - {fileID: 11400000, guid: ecebeeb980b9ddd4ba53a07142e019b8, type: 2}

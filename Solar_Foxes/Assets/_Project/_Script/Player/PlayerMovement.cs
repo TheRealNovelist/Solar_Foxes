@@ -2,59 +2,73 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public LineRenderer line;
-    public Vector2 originPoint;
+    public IngredientManager manager;
     
-    private List<Ingredient> chosenIngredients;
-    private List<Movement> allMovements;
-    private List<Vector2> movementNodes;
+    public List<LineRenderer> allLines;
+
+    private static List<Movement> allMovements;
+    private static List<Vector2> movementNodes;
+
+    public Collider2D frames;
     
     // Start is called before the first frame update
     private void Start()
     {
-        movementNodes.Insert(0, originPoint);
         RefreshTotalMovement();
     }
-    
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        DrawLine();
-        ConvertMovementsToNode();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(MoveSequence());
+        }
     }
 
-    public void AddIngredient(int index, Ingredient ingredient)
+    public IEnumerator MoveSequence()
     {
-        chosenIngredients.Insert(index, ingredient);
+        Sequence sequence = DOTween.Sequence();
+
+        for (int i = 0; i < movementNodes.Count; i++)
+        {
+            sequence.Append(transform.DOMove(movementNodes[i], 0.5f));
+        }
+        
+        yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
+        
+        ClearLine();
     }
 
-    public void RemoveIngredient(int index)
-    {
-        chosenIngredients.RemoveAt(index);
-    }
-    
-    void RefreshTotalMovement()
+    public void RefreshTotalMovement()
     {
         List<Movement> movements = new List<Movement>();
-        
-        for (int i = 0; i < chosenIngredients.Count; i++)
+
+        for (int i = 0; i < IngredientManager.ChosenIngredients.Length; i++)
         {
-            foreach (Movement move in chosenIngredients[i].movementQueue)
+            if (IngredientManager.ChosenIngredients[i] == null)
+            {
+                continue;
+            }
+            
+            foreach (Movement move in IngredientManager.ChosenIngredients[i].movementQueue)
             {
                 movements.Add(move);
             }
         }
 
         allMovements = movements;
+
+        ConvertMovementsToNode();
     }
 
     void ConvertMovementsToNode()
     {
         List<Vector2> newMovementNodes = new List<Vector2>();
-        newMovementNodes.Insert(0, Vector2.zero);
+        newMovementNodes.Insert(0, transform.position);
 
         for (int i = 0; i < allMovements.Count; i++)
         {
@@ -76,30 +90,55 @@ public class PlayerMovement : MonoBehaviour
                     break;
             }
 
-            newMovementNodes.Add(newMovementNodes[i] + moveDirection);
+            Vector2 nodeToAdd = newMovementNodes[i] + moveDirection;
+            if (!IsNodeValid(nodeToAdd))
+            {
+                movementNodes = new List<Vector2>();
+                manager.ReleaseAllHolders();
+                ClearLine();
+                return;
+            }
+            newMovementNodes.Add(nodeToAdd);
         }
-
         movementNodes = newMovementNodes;
+
+        DrawLine();
     }
 
-    private void DrawLine()
+    private bool IsNodeValid(Vector2 node)
     {
-        line.positionCount = movementNodes.Count;
-        
-        for (int i = 0; i < movementNodes.Count; i++)
+        return frames.bounds.Contains(node);
+    }
+
+    private void ClearLine()
+    {
+        foreach (var line in allLines)
         {
-            line.SetPosition(i, movementNodes[i]);
+            line.positionCount = 0;
         }
     }
     
-    // private void OnDrawGizmos()
-    // {
-    //     for (int i = 0; i < movementNodes.Count; i++)
-    //     {
-    //         if (i + 1 < movementNodes.Count)
-    //         {
-    //             Debug.DrawLine(movementNodes[i], movementNodes[i + 1], Color.white);
-    //         }
-    //     }
-    // }
+    private void DrawLine()
+    {
+        int startingNodeIndex = 0;
+        for (int currentLine = 0; currentLine < allLines.Count; currentLine++)
+        {
+            if (IngredientManager.ChosenIngredients[currentLine] == null)
+            {
+                allLines[currentLine].positionCount = 0;
+                continue;
+            }
+
+            int count = IngredientManager.ChosenIngredients[currentLine].movementQueue.Count;
+            int endingNodeIndex = startingNodeIndex + count;
+            List<Vector2> currentNodes = movementNodes.GetRange(startingNodeIndex, count + 1);
+            allLines[currentLine].positionCount = currentNodes.Count;
+            for (int i = 0; i < currentNodes.Count; i++)
+            {
+                allLines[currentLine].SetPosition(i, currentNodes[i]);
+            }
+            startingNodeIndex = endingNodeIndex;
+        }
+        
+    }
 }
