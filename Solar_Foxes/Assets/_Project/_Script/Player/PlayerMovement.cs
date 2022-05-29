@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject consumeButton;
     public GameObject tryAgainWarning;
+    public GameObject spinningWheel;
 
     public void StartMoveSequence()
     {
@@ -28,13 +29,17 @@ public class PlayerMovement : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         consumeButton.SetActive(false);
         manager.SetAllowHolderClick(false);
-        
+
+        float totalTime = 0f;
         for (int i = 0; i < movementNodes.Count; i++)
         {
             sequence.Append(transform.DOMove(movementNodes[i], 0.5f));
+            totalTime += 0.5f;
         }
-        
+
         yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
+        
+        spinningWheel.transform.rotation = Quaternion.Euler(0, 0, 0);
         
         manager.ConsumeIngredient();
         manager.SetAllowHolderClick(true);
