@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerStarCollector : MonoBehaviour
 {
@@ -32,7 +32,10 @@ public class PlayerStarCollector : MonoBehaviour
 
     private void Update()
     {
-       
+        if (rareIngredients.Count == 0)
+        {
+            SceneManager.LoadScene("Winning Screen");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
