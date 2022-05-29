@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Choosing Level.unity
     guid: b8b2f4c7db3241e42a068b99a95e8d21
   - enabled: 1
-    path: Assets/_Project/Scenes/Main Scene.unity
+    path: Assets/_Project/Scenes/Scorpio.unity
     guid: 3b3fc1ee4a9e50f4ba100ae68c4c5ebd
   m_configObjects: {}

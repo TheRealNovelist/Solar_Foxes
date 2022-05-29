@@ -71,14 +71,9 @@ public class MenuManager : MonoBehaviour
     }
 
 
-    public void Scorpio()
+    public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene("Main Scene");
+        SceneManager.LoadScene(sceneName);
     }
-
-
-
-
-
 
 }

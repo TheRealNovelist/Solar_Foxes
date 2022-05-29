@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 179680193}
   - component: {fileID: 179680192}
   m_Layer: 5
-  m_Name: Gemini (2)
+  m_Name: Sagittarius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 179680194}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 801194844}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Sagittarius
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &179680194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +522,7 @@ GameObject:
   - component: {fileID: 794642006}
   - component: {fileID: 794642005}
   m_Layer: 5
-  m_Name: Gemini (3)
+  m_Name: Scorpio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,14 +612,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 801194844}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Scorpio
-        m_Mode: 1
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Scorpio
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &794642007
@@ -1026,7 +1038,7 @@ GameObject:
   - component: {fileID: 1018606028}
   - component: {fileID: 1018606027}
   m_Layer: 5
-  m_Name: Gemini (1)
+  m_Name: Pisces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1113,7 +1125,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1018606029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 801194844}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pisces
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1018606029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,7 +1474,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1609138462}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 801194844}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Gemini
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1609138462
 MonoBehaviour:
   m_ObjectHideFlags: 0
