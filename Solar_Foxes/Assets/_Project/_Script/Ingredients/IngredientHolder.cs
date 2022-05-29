@@ -9,6 +9,7 @@ public class IngredientHolder : MonoBehaviour, IDropHandler, IPointerDownHandler
     public IngredientCard cardHolding;
 
     [SerializeField] private int index = 0;
+    public bool allowClick = true;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -23,7 +24,8 @@ public class IngredientHolder : MonoBehaviour, IDropHandler, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        RemoveIngredientFromHolder();
+        if (allowClick)
+            RemoveIngredientFromHolder();
     }
 
     public void RemoveIngredientFromHolder()

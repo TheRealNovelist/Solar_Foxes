@@ -14,25 +14,21 @@ public class PlayerMovement : MonoBehaviour
     private static List<Vector2> movementNodes;
 
     public Collider2D frames;
+
+    public GameObject consumeButton;
+    public GameObject tryAgainWarning;
+
+    public void StartMoveSequence()
+    {
+        StartCoroutine(MoveSequence());
+    }
     
-    // Start is called before the first frame update
-    private void Start()
-    {
-        RefreshTotalMovement();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(MoveSequence());
-        }
-    }
-
-    public IEnumerator MoveSequence()
+    private IEnumerator MoveSequence()
     {
         Sequence sequence = DOTween.Sequence();
-
+        consumeButton.SetActive(false);
+        manager.SetAllowHolderClick(false);
+        
         for (int i = 0; i < movementNodes.Count; i++)
         {
             sequence.Append(transform.DOMove(movementNodes[i], 0.5f));
@@ -41,11 +37,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
         
         manager.ConsumeIngredient();
+        manager.SetAllowHolderClick(true);
         ClearLine();
     }
 
     public void RefreshTotalMovement()
     {
+        consumeButton.SetActive(IngredientManager.ChosenIngredients.Length > 0);
+        
         List<Movement> movements = new List<Movement>();
 
         for (int i = 0; i < IngredientManager.ChosenIngredients.Length; i++)
@@ -94,9 +93,8 @@ public class PlayerMovement : MonoBehaviour
             Vector2 nodeToAdd = newMovementNodes[i] + moveDirection;
             if (!IsNodeValid(nodeToAdd))
             {
-                movementNodes = new List<Vector2>();
-                manager.ReleaseAllHolders();
-                ClearLine();
+                Restart();
+                StartCoroutine(TryAgain());
                 return;
             }
             newMovementNodes.Add(nodeToAdd);
@@ -111,12 +109,28 @@ public class PlayerMovement : MonoBehaviour
         return frames.bounds.Contains(node);
     }
 
+    public void Restart()
+    {
+        manager.ReleaseAllHolders();
+        movementNodes = new List<Vector2>();
+        ClearLine();
+    }
+    
     private void ClearLine()
     {
         foreach (var line in allLines)
         {
             line.positionCount = 0;
         }
+    }
+
+    private IEnumerator TryAgain()
+    {
+        tryAgainWarning.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+        
+        tryAgainWarning.SetActive(false);
     }
     
     private void DrawLine()
@@ -140,6 +154,5 @@ public class PlayerMovement : MonoBehaviour
             }
             startingNodeIndex = endingNodeIndex;
         }
-        
     }
 }

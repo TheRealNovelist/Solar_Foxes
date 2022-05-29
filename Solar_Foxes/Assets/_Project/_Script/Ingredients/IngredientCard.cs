@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
-
+using DG.Tweening;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
@@ -16,12 +16,15 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     public TextMeshProUGUI text;
     public Image displayImage;
     public Image draggingImage;
+    public GameObject objectToMove;
 
+    private bool allowInput = true;
+    
     [HideInInspector] public RectTransform displayTransform;
     [HideInInspector] public RectTransform draggingTransform;
 
-    private Vector2 originalPosition;
-    private Vector2 pulledPosition;
+    private float originalPosition;
+    private float pulledPosition;
     
     public IngredientHolder currentHolder;
 
@@ -57,9 +60,9 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
         draggingTransform = draggingImage.GetComponent<RectTransform>();
         draggingImage.enabled = false;
 
-        var position = transform.position;
-        originalPosition = position;
-        pulledPosition = position + Vector3.down * 100;
+        var position = objectToMove.transform.localPosition;
+        originalPosition = position.y;
+        pulledPosition = position.y - 100;
         
         UpdateCard();
     }
@@ -71,30 +74,30 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (currentHolder) return;
+        if (currentHolder || !allowInput) return;
 
-        transform.position = pulledPosition;
+        objectToMove.transform.DOLocalMoveY(pulledPosition, 0.5f);
         draggingImage.enabled = true;
         draggingTransform.position = eventData.position;
     }
     
     public void OnDrag(PointerEventData eventData)
     {
-        if (currentHolder) return;
+        if (currentHolder || !allowInput) return;
         
         draggingTransform.anchoredPosition += eventData.delta;
     }
     
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (currentHolder) return;
+        if (currentHolder || !allowInput) return;
         
         ReturnDraggingImage();
     }
     
     private void ReturnDraggingImage()
     {
-        transform.position = originalPosition;
+        objectToMove.transform.DOLocalMoveY(originalPosition, 0.5f);
         draggingTransform.anchoredPosition = displayTransform.anchoredPosition;
         draggingImage.enabled = false;
     }
@@ -103,6 +106,26 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         currentHolder = null;
         ReturnDraggingImage();
+    }
+
+    public void StartBurning(Ingredient newIngredient)
+    {
+        StartCoroutine(Burning(newIngredient));
+    }
+
+    private IEnumerator Burning(Ingredient newIngredient)
+    {
+        Sequence sequence = DOTween.Sequence();
+        
+        allowInput = false;
+        
+        sequence.Append(objectToMove.transform.DOLocalMoveY(pulledPosition - 200, 0.5f));
+        AssignIngredient(newIngredient);
+        sequence.Append(objectToMove.transform.DOLocalMoveY(originalPosition, 0.5f));
+
+        yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
+
+        allowInput = true;
     }
     
 }

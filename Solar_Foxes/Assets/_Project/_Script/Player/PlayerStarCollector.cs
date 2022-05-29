@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,7 +13,10 @@ public class PlayerStarCollector : MonoBehaviour
     public List<int> requirementAmountOfStars;
 
     public List<Ingredient> rareIngredients;
-    
+
+    public TextMeshProUGUI acquiredMessage;
+
+    private Queue<IEnumerator> listOfMessage;
     private void Awake()
     {
         while (requirementAmountOfStars.Count < rareIngredients.Count)
@@ -25,6 +29,15 @@ public class PlayerStarCollector : MonoBehaviour
         }
         
         requirementAmountOfStars.Sort();
+        listOfMessage = new Queue<IEnumerator>();
+    }
+
+    private void Update()
+    {
+        if (listOfMessage.Count > 0)
+        {
+            StartCoroutine(listOfMessage.Peek());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,8 +56,17 @@ public class PlayerStarCollector : MonoBehaviour
         if (starsCollected == requirementAmountOfStars[0])
         {
             requirementAmountOfStars.RemoveAt(0);
-            Debug.Log("Acquired Material");
+            listOfMessage.Enqueue(Message(rareIngredients[0].ingredientName));
+            rareIngredients.RemoveAt(0);
         }
     }
-    
+
+    private IEnumerator Message(string ingredientName)
+    {
+        acquiredMessage.text = "You have acquired " + ingredientName;
+        acquiredMessage.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        acquiredMessage.gameObject.SetActive(false);
+        listOfMessage.Dequeue();
+    }
 }

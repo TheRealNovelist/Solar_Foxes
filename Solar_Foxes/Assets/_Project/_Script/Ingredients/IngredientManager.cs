@@ -11,7 +11,8 @@ public class IngredientManager : MonoBehaviour
     public List<IngredientHolder> allHolders;
 
     public IngredientPool pool;
-
+    public PlayerMovement player;
+    
     private void Awake()
     {
         foreach (IngredientCard card in allCards)
@@ -43,11 +44,29 @@ public class IngredientManager : MonoBehaviour
         FindObjectOfType<PlayerMovement>().RefreshTotalMovement();
     }
 
+    public void SetAllowHolderClick(bool isAllowed)
+    {
+        foreach (var holder in allHolders)
+        {
+            holder.allowClick = isAllowed;
+        }
+    }
+    
     public void ReleaseAllHolders()
     {
         foreach (var holder in allHolders)
         {
             holder.RemoveIngredientFromHolder();
+        }
+    }
+
+    public void Burn()
+    {
+        ReleaseAllHolders();
+        player.Restart();
+        foreach (IngredientCard card in allCards)
+        {
+            card.StartBurning(pool.GetRandomIngredient());
         }
     }
 }
