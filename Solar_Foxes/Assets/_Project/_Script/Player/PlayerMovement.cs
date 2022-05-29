@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject tryAgainWarning;
     public GameObject spinningWheel;
     public AudioSource fx;
+
+    private bool isMoving = false;
     public void StartMoveSequence()
     {
         StartCoroutine(MoveSequence());
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     
     private IEnumerator MoveSequence()
     {
+        isMoving = true;
         fx.Play();
         Sequence pathSequence = DOTween.Sequence();
         Sequence sequence = DOTween.Sequence();
@@ -44,10 +47,10 @@ public class PlayerMovement : MonoBehaviour
         yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
 
         spinningWheel.transform.rotation = Quaternion.identity;
-        
         manager.ConsumeIngredient();
         manager.SetAllowHolderClick(true);
         ClearLine();
+        isMoving = false;
     }
 
     public void RefreshTotalMovement()
@@ -76,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
     void ConvertMovementsToNode()
     {
+        if (isMoving) { return; }
+        
         List<Vector2> newMovementNodes = new List<Vector2>();
         newMovementNodes.Insert(0, transform.position);
 
