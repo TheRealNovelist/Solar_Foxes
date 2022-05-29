@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Choosing Level.unity
     guid: b8b2f4c7db3241e42a068b99a95e8d21
   - enabled: 1
+    path: Assets/_Project/Scenes/Gemini.unity
+    guid: e4195e0a24434d443aa83cb81bd50322
+  - enabled: 1
+    path: Assets/_Project/Scenes/Pisces.unity
+    guid: a1109c5a0adbc684981b11ac97ab1247
+  - enabled: 1
+    path: Assets/_Project/Scenes/Sagittarius.unity
+    guid: 4d9420f3c36959343930714e26486349
+  - enabled: 1
     path: Assets/_Project/Scenes/Scorpio.unity
     guid: 3b3fc1ee4a9e50f4ba100ae68c4c5ebd
+  - enabled: 1
+    path: Assets/_Project/Scenes/Winning Screen.unity
+    guid: a9ad3285f6aa39e4a93f65bb7444075e
   m_configObjects: {}

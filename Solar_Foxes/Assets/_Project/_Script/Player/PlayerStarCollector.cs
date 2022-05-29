@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerStarCollector : MonoBehaviour
 {
@@ -14,7 +15,9 @@ public class PlayerStarCollector : MonoBehaviour
 
     public List<Ingredient> rareIngredients;
 
-    public TextMeshProUGUI acquiredMessage;
+    public GameObject acquiredObject;
+    private TextMeshProUGUI acquiredMessage;
+    private Image acquiredImage;
     
     private void Awake()
     {
@@ -26,8 +29,10 @@ public class PlayerStarCollector : MonoBehaviour
                 requirementAmountOfStars.Add(newRequirement);
             }
         }
-        
         requirementAmountOfStars.Sort();
+
+        acquiredMessage = acquiredObject.GetComponentInChildren<TextMeshProUGUI>();
+        acquiredImage = acquiredObject.GetComponentInChildren<Image>();
     }
 
     private void Update()
@@ -54,16 +59,17 @@ public class PlayerStarCollector : MonoBehaviour
         if (starsCollected == requirementAmountOfStars[0])
         {
             requirementAmountOfStars.RemoveAt(0);
-            StartCoroutine(Message(rareIngredients[0].ingredientName));
+            StartCoroutine(Message(rareIngredients[0]));
             rareIngredients.RemoveAt(0);
         }
     }
 
-    private IEnumerator Message(string ingredientName)
+    private IEnumerator Message(Ingredient ingredient)
     {
-        acquiredMessage.text = "You have acquired " + ingredientName;
-        acquiredMessage.gameObject.SetActive(true);
+        acquiredMessage.text = "You have acquired " + ingredient.ingredientName;
+        acquiredImage.sprite = ingredient.sprite;
+        acquiredObject.SetActive(true);
         yield return new WaitForSeconds(3f);
-        acquiredMessage.gameObject.SetActive(false);
+        acquiredObject.SetActive(false);
     }
 }
