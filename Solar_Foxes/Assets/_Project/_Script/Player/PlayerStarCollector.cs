@@ -15,8 +15,7 @@ public class PlayerStarCollector : MonoBehaviour
     public List<Ingredient> rareIngredients;
 
     public TextMeshProUGUI acquiredMessage;
-
-    private Queue<IEnumerator> listOfMessage;
+    
     private void Awake()
     {
         while (requirementAmountOfStars.Count < rareIngredients.Count)
@@ -29,15 +28,11 @@ public class PlayerStarCollector : MonoBehaviour
         }
         
         requirementAmountOfStars.Sort();
-        listOfMessage = new Queue<IEnumerator>();
     }
 
     private void Update()
     {
-        if (listOfMessage.Count > 0)
-        {
-            StartCoroutine(listOfMessage.Peek());
-        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,7 +51,7 @@ public class PlayerStarCollector : MonoBehaviour
         if (starsCollected == requirementAmountOfStars[0])
         {
             requirementAmountOfStars.RemoveAt(0);
-            listOfMessage.Enqueue(Message(rareIngredients[0].ingredientName));
+            StartCoroutine(Message(rareIngredients[0].ingredientName));
             rareIngredients.RemoveAt(0);
         }
     }
@@ -67,6 +62,5 @@ public class PlayerStarCollector : MonoBehaviour
         acquiredMessage.gameObject.SetActive(true);
         yield return new WaitForSeconds(3f);
         acquiredMessage.gameObject.SetActive(false);
-        listOfMessage.Dequeue();
     }
 }
