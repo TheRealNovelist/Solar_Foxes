@@ -104,9 +104,5 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
         currentHolder = null;
         ReturnDraggingImage();
     }
-
-    public void ChangeIngredient()
-    {
-        AssignIngredient(manager.RequestIngredient());
-    }
+    
 }

@@ -11,7 +11,7 @@ public class IngredientManager : MonoBehaviour
     public List<IngredientHolder> allHolders;
 
     public IngredientPool pool;
-    
+
     private void Awake()
     {
         foreach (IngredientCard card in allCards)
@@ -21,9 +21,14 @@ public class IngredientManager : MonoBehaviour
         }
     }
 
-    public Ingredient RequestIngredient()
+    // ReSharper disable Unity.PerformanceAnalysis
+    public void ConsumeIngredient()
     {
-        return pool.GetRandomIngredient();
+        foreach (var holder in allHolders)
+        {
+            if (holder.cardHolding) holder.cardHolding.AssignIngredient(pool.GetRandomIngredient());
+            holder.RemoveIngredientFromHolder();
+        }
     }
 
     public static void AddIngredient(int index, Ingredient ingredient)

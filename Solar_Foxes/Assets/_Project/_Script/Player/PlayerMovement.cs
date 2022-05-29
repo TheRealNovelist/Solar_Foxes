@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         
         yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
         
+        manager.ConsumeIngredient();
         ClearLine();
     }
 

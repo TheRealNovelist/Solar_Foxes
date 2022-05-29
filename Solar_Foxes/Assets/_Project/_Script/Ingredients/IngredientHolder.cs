@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class IngredientHolder : MonoBehaviour, IDropHandler, IPointerDownHandler
 {
-    private IngredientCard cardHolding;
+    public IngredientCard cardHolding;
 
     [SerializeField] private int index = 0;
 

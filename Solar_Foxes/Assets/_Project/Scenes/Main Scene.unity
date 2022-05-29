@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 407048381}
   - component: {fileID: 407048382}
   - component: {fileID: 407048383}
+  - component: {fileID: 407048384}
   m_Layer: 0
   m_Name: Scorpio (2)
   m_TagString: Star
@@ -474,12 +475,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &407048384
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407048380}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &432049954
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +513,7 @@ GameObject:
   - component: {fileID: 432049955}
   - component: {fileID: 432049956}
   - component: {fileID: 432049957}
+  - component: {fileID: 432049958}
   m_Layer: 0
   m_Name: Scorpio
   m_TagString: Star
@@ -573,12 +596,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &432049958
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432049954}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &487673965
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +634,7 @@ GameObject:
   - component: {fileID: 487673966}
   - component: {fileID: 487673967}
   - component: {fileID: 487673968}
+  - component: {fileID: 487673969}
   m_Layer: 0
   m_Name: Scorpio (9)
   m_TagString: Star
@@ -672,12 +717,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &487673969
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487673965}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!224 &573734989 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5682117975094715886, guid: d49ed594b83d86046ab3adba7a8a94e5, type: 3}
@@ -863,6 +929,7 @@ GameObject:
   - component: {fileID: 720514250}
   - component: {fileID: 720514251}
   - component: {fileID: 720514252}
+  - component: {fileID: 720514253}
   m_Layer: 0
   m_Name: Scorpio (8)
   m_TagString: Star
@@ -945,12 +1012,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &720514253
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720514249}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &749246829
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +1050,7 @@ GameObject:
   - component: {fileID: 749246830}
   - component: {fileID: 749246831}
   - component: {fileID: 749246832}
+  - component: {fileID: 749246833}
   m_Layer: 0
   m_Name: Scorpio (1)
   m_TagString: Star
@@ -1044,12 +1133,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &749246833
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749246829}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &779406448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,6 +1284,7 @@ GameObject:
   - component: {fileID: 796807724}
   - component: {fileID: 796807725}
   - component: {fileID: 796807726}
+  - component: {fileID: 796807727}
   m_Layer: 0
   m_Name: Scorpio (11)
   m_TagString: Star
@@ -1256,12 +1367,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &796807727
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796807723}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &846589790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1494,6 +1626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0a2d749a1672942abb3292d559396a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardHolding: {fileID: 0}
   index: 1
 --- !u!1 &903733805
 GameObject:
@@ -1750,6 +1883,7 @@ GameObject:
   - component: {fileID: 932231748}
   - component: {fileID: 932231749}
   - component: {fileID: 932231750}
+  - component: {fileID: 932231751}
   m_Layer: 0
   m_Name: Scorpio (4)
   m_TagString: Star
@@ -1832,12 +1966,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &932231751
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932231747}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &977335603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1962,6 +2117,7 @@ GameObject:
   - component: {fileID: 997176978}
   - component: {fileID: 997176979}
   - component: {fileID: 997176980}
+  - component: {fileID: 997176981}
   m_Layer: 0
   m_Name: Scorpio (10)
   m_TagString: Star
@@ -2044,12 +2200,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &997176981
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997176977}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &998090068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,6 +2240,7 @@ GameObject:
   - component: {fileID: 998090069}
   - component: {fileID: 998090073}
   - component: {fileID: 998090072}
+  - component: {fileID: 998090074}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2170,7 +2348,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.34
+  m_Radius: 0.86
 --- !u!114 &998090073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2183,6 +2361,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c76ac35c472dc4ca3583a4a53b7efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfStars: 12
+  starsCollected: 0
+  requirementAmountOfStars: 
+  rareIngredients:
+  - {fileID: 11400000, guid: 67ce056eae6ac6948894fd77b660b8bc, type: 2}
+  - {fileID: 11400000, guid: bf7f42e548c2ee24ea90f1078587cca9, type: 2}
+  - {fileID: 11400000, guid: ecebeeb980b9ddd4ba53a07142e019b8, type: 2}
+--- !u!50 &998090074
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998090068}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!224 &1036484334 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5682117975094715886, guid: d49ed594b83d86046ab3adba7a8a94e5, type: 3}
@@ -2292,6 +2498,7 @@ GameObject:
   - component: {fileID: 1226186651}
   - component: {fileID: 1226186652}
   - component: {fileID: 1226186653}
+  - component: {fileID: 1226186654}
   m_Layer: 0
   m_Name: Scorpio (6)
   m_TagString: Star
@@ -2374,12 +2581,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &1226186654
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226186650}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1321997935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +3058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0a2d749a1672942abb3292d559396a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardHolding: {fileID: 0}
   index: 2
 --- !u!1 &1451368180
 GameObject:
@@ -2919,6 +3148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0a2d749a1672942abb3292d559396a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardHolding: {fileID: 0}
   index: 4
 --- !u!1 &1489209655
 GameObject:
@@ -3224,6 +3454,7 @@ GameObject:
   - component: {fileID: 1625536796}
   - component: {fileID: 1625536797}
   - component: {fileID: 1625536798}
+  - component: {fileID: 1625536799}
   m_Layer: 0
   m_Name: Scorpio (7)
   m_TagString: Star
@@ -3306,12 +3537,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &1625536799
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625536795}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1716081325
 GameObject:
   m_ObjectHideFlags: 0
@@ -3466,6 +3718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0a2d749a1672942abb3292d559396a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardHolding: {fileID: 0}
   index: 0
 --- !u!1 &1822163925
 GameObject:
@@ -3917,6 +4170,7 @@ GameObject:
   - component: {fileID: 1930189607}
   - component: {fileID: 1930189608}
   - component: {fileID: 1930189609}
+  - component: {fileID: 1930189610}
   m_Layer: 0
   m_Name: Scorpio (5)
   m_TagString: Star
@@ -3999,12 +4253,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &1930189610
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930189606}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1931879788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4093,6 +4368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0a2d749a1672942abb3292d559396a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardHolding: {fileID: 0}
   index: 3
 --- !u!1 &1932084786
 GameObject:
@@ -4105,6 +4381,7 @@ GameObject:
   - component: {fileID: 1932084787}
   - component: {fileID: 1932084788}
   - component: {fileID: 1932084789}
+  - component: {fileID: 1932084790}
   m_Layer: 0
   m_Name: Scorpio (12)
   m_TagString: Star
@@ -4187,12 +4464,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &1932084790
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932084786}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &2018798065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4204,6 +4502,7 @@ GameObject:
   - component: {fileID: 2018798066}
   - component: {fileID: 2018798067}
   - component: {fileID: 2018798068}
+  - component: {fileID: 2018798069}
   m_Layer: 0
   m_Name: Scorpio (3)
   m_TagString: Star
@@ -4286,12 +4585,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.53
+--- !u!50 &2018798069
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018798065}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &3169762325164506060
 PrefabInstance:
   m_ObjectHideFlags: 0
