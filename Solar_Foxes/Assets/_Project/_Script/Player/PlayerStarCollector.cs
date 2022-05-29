@@ -13,6 +13,8 @@ public class PlayerStarCollector : MonoBehaviour
     public int starsCollected;
     public List<int> requirementAmountOfStars;
 
+    public AudioSource fx;
+
     public List<Ingredient> rareIngredients;
 
     public GameObject acquiredObject;
@@ -49,6 +51,7 @@ public class PlayerStarCollector : MonoBehaviour
         {
             Debug.Log("Collided " + collision);
             starsCollected++;
+            fx.Play();
             CheckIfRequirementMet();
             collision.gameObject.SetActive(false);
         }

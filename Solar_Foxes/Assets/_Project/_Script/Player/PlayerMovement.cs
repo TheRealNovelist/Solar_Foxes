@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject consumeButton;
     public GameObject tryAgainWarning;
     public GameObject spinningWheel;
-
+    public AudioSource fx;
     public void StartMoveSequence()
     {
         StartCoroutine(MoveSequence());
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     
     private IEnumerator MoveSequence()
     {
+        fx.Play();
         Sequence pathSequence = DOTween.Sequence();
         Sequence sequence = DOTween.Sequence();
         consumeButton.SetActive(false);
