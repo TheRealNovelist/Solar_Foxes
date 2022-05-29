@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     
     private IEnumerator MoveSequence()
     {
+        Sequence pathSequence = DOTween.Sequence();
         Sequence sequence = DOTween.Sequence();
         consumeButton.SetActive(false);
         manager.SetAllowHolderClick(false);
@@ -33,11 +34,11 @@ public class PlayerMovement : MonoBehaviour
         float totalTime = 0f;
         for (int i = 0; i < movementNodes.Count; i++)
         {
-            sequence.Append(transform.DOMove(movementNodes[i], 0.5f));
+            pathSequence.Append(transform.DOMove(movementNodes[i], 0.5f));
             totalTime += 0.5f;
         }
-        
-        sequence.Insert(0,spinningWheel.transform.DORotate(new Vector3(0, 0, -360), totalTime, RotateMode.FastBeyond360));
+        sequence.Prepend(spinningWheel.transform.DORotate(new Vector3(0, 0, -360), totalTime, RotateMode.FastBeyond360));
+        sequence.Join(pathSequence);
         
         yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
 
