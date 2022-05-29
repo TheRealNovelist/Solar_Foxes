@@ -2103,6 +2103,7 @@ MonoBehaviour:
   frames: {fileID: 1418910750}
   consumeButton: {fileID: 1884392556}
   tryAgainWarning: {fileID: 660667050}
+  spinningWheel: {fileID: 1415943963}
 --- !u!212 &998090070
 SpriteRenderer:
   m_ObjectHideFlags: 0

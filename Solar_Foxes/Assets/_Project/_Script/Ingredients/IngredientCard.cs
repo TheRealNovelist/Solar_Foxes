@@ -98,6 +98,7 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     private void ReturnDraggingImage()
     {
         objectToMove.transform.DOLocalMoveY(originalPosition, 0.5f);
+        draggingTransform.parent = gameObject.transform;
         draggingTransform.anchoredPosition = displayTransform.anchoredPosition;
         draggingImage.enabled = false;
     }

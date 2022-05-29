@@ -36,10 +36,12 @@ public class PlayerMovement : MonoBehaviour
             sequence.Append(transform.DOMove(movementNodes[i], 0.5f));
             totalTime += 0.5f;
         }
-
-        yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
         
-        spinningWheel.transform.rotation = Quaternion.Euler(0, 0, 0);
+        sequence.Insert(0,spinningWheel.transform.DORotate(new Vector3(0, 0, -360), totalTime, RotateMode.FastBeyond360));
+        
+        yield return new DOTweenCYInstruction.WaitForCompletion(sequence);
+
+        spinningWheel.transform.rotation = Quaternion.identity;
         
         manager.ConsumeIngredient();
         manager.SetAllowHolderClick(true);

@@ -7,9 +7,11 @@ using UnityEngine.EventSystems;
 public class IngredientHolder : MonoBehaviour, IDropHandler, IPointerDownHandler
 {
     public IngredientCard cardHolding;
-
+    
     [SerializeField] private int index = 0;
     public bool allowClick = true;
+
+    private RectTransform image;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -18,7 +20,9 @@ public class IngredientHolder : MonoBehaviour, IDropHandler, IPointerDownHandler
         
         cardHolding = eventData.pointerDrag.GetComponent<IngredientCard>();
         cardHolding.AssignHolder(this);
-        cardHolding.draggingTransform.position = GetComponent<RectTransform>().position;
+        image = cardHolding.draggingTransform;
+        image.position = GetComponent<RectTransform>().position;
+        image.parent = gameObject.transform;
         IngredientManager.AddIngredient(index, cardHolding.ingredient);
     }
 
