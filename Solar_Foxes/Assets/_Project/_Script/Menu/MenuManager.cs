@@ -69,4 +69,16 @@ public class MenuManager : MonoBehaviour
         buttonBack2.SetActive(false);
         credit.SetActive(false);
     }
+
+
+    public void Scorpio()
+    {
+        SceneManager.LoadScene("Main Scene");
+    }
+
+
+
+
+
+
 }
