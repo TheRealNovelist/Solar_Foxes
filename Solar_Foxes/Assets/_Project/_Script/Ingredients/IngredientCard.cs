@@ -28,6 +28,8 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     
     public IngredientHolder currentHolder;
 
+    private Canvas canvas;
+
     public void Init(IngredientManager newManager)
     {
         manager = newManager;
@@ -63,7 +65,9 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
         var position = objectToMove.transform.localPosition;
         originalPosition = position.y;
         pulledPosition = position.y - 100;
-        
+
+        canvas = GetComponentInParent<Canvas>();
+
         UpdateCard();
     }
 
@@ -85,7 +89,7 @@ public class IngredientCard : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         if (currentHolder || !allowInput) return;
         
-        draggingTransform.anchoredPosition += eventData.delta;
+        draggingTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
     
     public void OnEndDrag(PointerEventData eventData)
